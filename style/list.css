@@ -4,11 +4,15 @@ html {
 
 body {
   min-width: 300px;
+  max-width: 674px;
   padding: 10px 5px 10px 5px;
 }
 
 h1 {
+  display: inline-block;
   color: #826159;
+  padding: 0;
+  margin: 0;
 }
 
 .smalltitle {
@@ -85,8 +89,8 @@ h1 {
 
 .inputbox {
   font-size: large;
-  max-width: 675px;
-  min-height: 51px;
+  max-width: 375px;
+  min-height: 41px;
   background-color: #fefefe;
   box-shadow: 1px 1px 1px #826159;
   border: 0;
@@ -123,6 +127,17 @@ h1 {
 
 #listTitle {
   margin-bottom: 0;
+}
+
+#list {
+  font-size: large;
+  display: inline-block;
+  width: 150px;
+  margin-left: 10px;
+  vertical-align: text-middle;
+  border: none;
+  color: #826159;
+  font-weight: bold;
 }
 
 .container {

@@ -4,18 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var listname = document.getElementById("list");
   var listitem = document.getElementById("addBox");
 
-  chrome.storage.local.get('list', function(result) {
+  chrome.storage.sync.get('list', function(result) {
     if (undefined != result.list) {
       var listData = JSON.parse(reqGobbles("https://gogobbles.com/api/get/" + result.list));
       populateList(listData);
       currList = result.list;
+      listname.value = currList;
+    } else {
+      listitem.style.display = 'none';
     }
   });
 
   listname.onkeypress = getList;
   listitem.onkeypress = addTodo;
-  console.log('loaded');
-}, false); 
+}, false);
 
 function reqGobbles(url) {
   xh = new XMLHttpRequest();
@@ -33,12 +35,11 @@ function getList(event) {
       return;
     }
     currList = input.value;
-    chrome.storage.local.set({'list': currList}, function() {
-      console.log('Settings saved');
-    });
+    chrome.storage.sync.set({'list': currList}, null);
 
     var listData = JSON.parse(reqGobbles("https://gogobbles.com/api/get/" + input.value));
     populateList(listData);
+    document.getElementById("addBox").style.display = 'initial';
   }
 }
 
@@ -52,6 +53,11 @@ function populateList(listData) {
     var newBut = document.createElement('img');
     var thisId = listData.Todos[i].Id;
     var text = listData.Todos[i].Text;
+
+    if (text.length > 38) {
+      text = text.slice(0, 35);
+      text += "...";
+    }
 
     entry.className = 'entry col c12';
     newTodo.id = 'todo' + thisId;
@@ -92,6 +98,7 @@ function addTodo(event) {
   if (event.keyCode == 13 && inputOrig.length > 0) {
     document.getElementById("addBox").value = '';
     addElem(inputOrig);
+    document.getElementById("list").value = currList;
   }
 }
 
@@ -153,3 +160,15 @@ function addElem(text, refId) {
     entry.className += ' load col c12';
   }, 10);
 }
+
+setInterval(function() {
+    resp = JSON.parse(reqGobbles("https://gogobbles.com/api/get/" + currList, false));
+    for (var i = 0; i < resp.Count; i++) {
+      var obj = resp.Todos[i].Id;
+      var text = resp.Todos[i].Text;
+      var todoItem = document.getElementById('todo' + obj);
+      if (todoItem == null) {
+        addElem(text, obj);
+      }
+    }
+}, 3000);
