@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
   "name": "GoGobblesTab",
+  "short_name": "GoGobblesTab",
   "author": "Hong Shick Pak",
-  "version": "1.0",
+  "version": "0.9",
   "description": "Chrome extension for GoGobbles lists.",
 
   "icons": {

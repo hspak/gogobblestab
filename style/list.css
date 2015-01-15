@@ -111,7 +111,7 @@ h1 {
 
 #gobbles {
   font-size: 30px;
-  font-family: "Helvetica-Roman", san-serif;
+  font-family: san-serif;
   display: inline-block;
   transform: translateY(30%);
   color: #826159;
@@ -132,10 +132,10 @@ h1 {
 #list {
   font-size: large;
   display: inline-block;
-  width: 150px;
   margin-left: 10px;
   vertical-align: text-middle;
   border: none;
+  width: 221px;
   color: #826159;
   font-weight: bold;
 }
