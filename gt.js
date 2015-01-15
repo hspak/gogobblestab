@@ -117,14 +117,14 @@ function addElem(text, refId) {
         return;
       }
       redifyHold = true;
-      box.classList.add('redify-helper');
-      box.parentNode.classList.add('redify');
+      box.placeholder = '';
+      box.classList.add('redify');
       setTimeout(function() {
-        box.parentNode.classList.remove('redify');
-        box.parentNode.classList.add('unredify');
+        box.classList.remove('redify');
+        box.classList.add('unredify');
         setTimeout(function() {
-          box.classList.remove('redify-helper');
-          box.parentNode.classList.remove('unredify');
+          box.classList.remove('unredify');
+          box.placeholder = 'Add an entry here';
           redifyHold = false;
         }, 350);
       }, 450);

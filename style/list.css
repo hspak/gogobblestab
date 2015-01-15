@@ -83,10 +83,6 @@ h1 {
   transition: all 0.26s ease;
 }
 
-.redify-helper {
-  margin-bottom: 0px !important;
-}
-
 .inputbox {
   font-size: large;
   max-width: 375px;

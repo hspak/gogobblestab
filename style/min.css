@@ -6,10 +6,10 @@ body,textarea,input{background:0;border-radius:0;margin:0}.smooth{transition:all
   -ms-transition: background-color 0.6s;
   -o-transition: background-color 0.6s;
   transition: background-color 0.6s;
-  background-color: #993E37;
+  background-color: #993E37 !important;
 }
 .unredify {
-  background-color: #f9f6f3;
+  background-color: #f9f6f3 !important;
   -webkit-transition: background-color 0.35s;
   -moz-transition: background-color 0.35s;
   -ms-transition: background-color 0.35s;
