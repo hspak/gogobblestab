@@ -1,0 +1,130 @@
+html {
+  background-color: #f9f6f3;
+}
+
+body {
+  min-width: 300px;
+  padding: 10px 5px 10px 5px;
+}
+
+h1 {
+  color: #826159;
+}
+
+.smalltitle {
+  margin: 0;
+}
+
+.x {
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 9px;
+  padding-left: 6px;
+
+  transition: opacity 0.2s ease-in;
+}
+
+.x:hover {
+  opacity: 1.0;
+}
+
+.t {
+  display: inline-block;
+  transform: translateY(10%);
+}
+
+.row {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.entry {
+  max-width: 690px;
+  opacity: 0.3;
+  white-space: nowrap;
+  background-color: #fefefe;
+  padding: 13px 0 13px 0;
+  margin: 1px 0 4px 0;
+  font-size: large;
+  box-shadow: 1px 1px 2px #826159;
+
+  -webkit-transition: opacity 0.35s ease-in;
+  -moz-transition: opacity 0.35s ease-in;
+  -ms-transition: opacity 0.35s ease-in;
+  -o-transition: opacity 0.35s ease-in;
+  transition: opacity 0.35s ease-in;
+}
+
+.entry.load {
+  opacity: 1;
+}
+
+.entry.horizTranslate {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 0;
+  margin-left: 100% !important;
+}
+
+.entry.shrink {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  margin-bottom: -60px;
+  transition: all 0.26s ease;
+}
+
+.redify-helper {
+  margin-bottom: 0px !important;
+}
+
+.inputbox {
+  font-size: large;
+  max-width: 675px;
+  min-height: 51px;
+  background-color: #fefefe;
+  box-shadow: 1px 1px 1px #826159;
+  border: 0;
+  opacity: .3;
+  margin-right: 100px;
+  margin-bottom: 5px;
+
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+.title {
+  margin-top: 10px;
+  margin-left: 14px;
+  float: left;
+}
+
+#gobbles {
+  font-size: 30px;
+  font-family: "Helvetica-Roman", san-serif;
+  display: inline-block;
+  transform: translateY(30%);
+  color: #826159;
+  margin: 0 0 40px 0;
+}
+
+#turkey {
+  max-height: 40px;
+  max-width: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#listTitle {
+  margin-bottom: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
