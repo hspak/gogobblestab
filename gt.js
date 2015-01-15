@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   chrome.storage.local.get('list', function(result) {
     if (undefined != result.list) {
       var listData = JSON.parse(reqGobbles("https://gogobbles.com/api/get/" + result.list));
-      populateList(listData, result.list);
+      populateList(listData);
+      currList = result.list;
     }
   });
 
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false); 
 
 function reqGobbles(url) {
-  // console.log(url);
   xh = new XMLHttpRequest();
   xh.open("GET", url, false);
   xh.send();
@@ -38,17 +38,14 @@ function getList(event) {
     });
 
     var listData = JSON.parse(reqGobbles("https://gogobbles.com/api/get/" + input.value));
-    populateList(listData, input.value);
+    populateList(listData);
   }
 }
 
-function populateList(listData, input) {
+function populateList(listData) {
   var list = document.getElementById('theList');
   list.innerHTML = '';
 
-  // console.log(listData);
-  // console.log(listData.Count);
-  
   for (var i = 0; i < listData.Count; i++) {
     var entry = document.createElement('div');
     var newTodo = document.createElement('span');
@@ -62,7 +59,9 @@ function populateList(listData, input) {
     newBut.id = 'but' + thisId;
     newBut.className = 'x';
     newBut.src = 'icons/circlex.png';
-    newBut.onclick = function() { removeTodo(newBut.id.substr(3), input); };
+    newBut.onclick = function() {
+      removeTodo(this.id.substr(3));
+    };
 
     newTodo.appendChild(document.createTextNode(text));
     entry.appendChild(newBut);

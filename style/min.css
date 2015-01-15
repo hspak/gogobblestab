@@ -21,33 +21,6 @@ html {
   bakground-color: #f9f6f3;
 }
 
-@font-face {
-  font-family:'Helvetica-Bold';
-  src:url('/font/HelveticaNeueLTCom-Bd.ttf');
-}
-@font-face {
-  font-family:'Helvetica-Thin';
-  src:url('/font/HelveticaNeueLTCom-Th.ttf');
-}
-@font-face {
-  font-family:'Helvetica';
-  src:url('/font/HelveticaNeueLTCom-Md.ttf');
-}
-@font-face {
-  font-family:'Helvetica-Roman';
-  src:url('/font/HelveticaNeueLTCom-Roman.ttf');
-}
-
-body {
-  font-family: "Helvetica", sans-serif;
-}
-
-.head {
-  font-family: "Helvetica-Thin", sans-serif;
-  text-align: right;
-  margin: 28px 10px 0 0;
-}
-
 .colorbar {
   height: 4px;
   background-color: #826159;
